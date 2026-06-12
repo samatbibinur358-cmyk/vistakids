@@ -126,18 +126,19 @@ function PrimaryButton({
 
 function GhostButton({
   children,
-  href = "#demo",
+  onClick,
 }: {
   children: React.ReactNode;
-  href?: string;
+  onClick?: () => void;
 }) {
   return (
-    <a
-      href={href}
+    <button
+      type="button"
+      onClick={onClick ?? startLesson}
       className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-base font-semibold text-foreground transition-colors hover:bg-secondary"
     >
       {children}
-    </a>
+    </button>
   );
 }
 
