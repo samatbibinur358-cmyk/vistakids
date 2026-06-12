@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import buddyImg from "@/assets/buddy.png";
+import { MiniLesson, startLesson } from "@/components/MiniLesson";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,6 +58,7 @@ function Index() {
         <CTA />
       </main>
       <Footer />
+      <MiniLesson />
     </div>
   );
 }
@@ -106,35 +108,37 @@ function Section({
 
 function PrimaryButton({
   children,
-  href = "#cta",
+  onClick,
 }: {
   children: React.ReactNode;
-  href?: string;
+  onClick?: () => void;
 }) {
   return (
-    <a
-      href={href}
+    <button
+      type="button"
+      onClick={onClick ?? startLesson}
       className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5"
     >
       {children}
-    </a>
+    </button>
   );
 }
 
 function GhostButton({
   children,
-  href = "#demo",
+  onClick,
 }: {
   children: React.ReactNode;
-  href?: string;
+  onClick?: () => void;
 }) {
   return (
-    <a
-      href={href}
+    <button
+      type="button"
+      onClick={onClick ?? startLesson}
       className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-base font-semibold text-foreground transition-colors hover:bg-secondary"
     >
       {children}
-    </a>
+    </button>
   );
 }
 
@@ -168,12 +172,13 @@ function Header() {
             </a>
           ))}
         </nav>
-        <a
-          href="#cta"
+        <button
+          type="button"
+          onClick={startLesson}
           className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)]"
         >
           Начать
-        </a>
+        </button>
       </div>
     </header>
   );
