@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import buddyImg from "@/assets/buddy.png";
+import { MiniLesson, startLesson } from "@/components/MiniLesson";
 
 export const Route = createFileRoute("/")({
   head: () => ({
