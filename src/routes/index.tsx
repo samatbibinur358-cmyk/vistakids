@@ -108,18 +108,19 @@ function Section({
 
 function PrimaryButton({
   children,
-  href = "#cta",
+  onClick,
 }: {
   children: React.ReactNode;
-  href?: string;
+  onClick?: () => void;
 }) {
   return (
-    <a
-      href={href}
+    <button
+      type="button"
+      onClick={onClick ?? startLesson}
       className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5"
     >
       {children}
-    </a>
+    </button>
   );
 }
 
