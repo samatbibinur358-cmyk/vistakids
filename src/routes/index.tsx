@@ -172,12 +172,13 @@ function Header() {
             </a>
           ))}
         </nav>
-        <a
-          href="#cta"
+        <button
+          type="button"
+          onClick={startLesson}
           className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)]"
         >
           Начать
-        </a>
+        </button>
       </div>
     </header>
   );
