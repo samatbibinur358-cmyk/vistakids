@@ -58,6 +58,7 @@ function Index() {
         <CTA />
       </main>
       <Footer />
+      <MiniLesson />
     </div>
   );
 }
